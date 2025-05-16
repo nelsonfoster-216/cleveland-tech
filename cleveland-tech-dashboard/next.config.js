@@ -22,8 +22,7 @@ const nextConfig = {
       'www.hoffleigh.com'
     ],
     unoptimized: true,
-  },
-  swcMinify: true,
+  }
 };
 
 module.exports = nextConfig; 
