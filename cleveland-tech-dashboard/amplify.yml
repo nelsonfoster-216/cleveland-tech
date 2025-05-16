@@ -7,29 +7,29 @@ frontend:
     build:
       commands:
         - echo "Current working directory is $(pwd)"
-        - ls -la
         - mkdir -p public
         - npm run build
-        - mkdir -p .next/standalone/.next
-        - cp -R .next/static .next/standalone/.next/
+        - echo "Next.js build completed, setting up standalone output"
+        - mkdir -p .next/standalone/.next/static
+        - cp -R .next/static/* .next/standalone/.next/static/
         - mkdir -p .next/standalone/public
-        - if [ -d "public" ]; then cp -R public/* .next/standalone/public/ || echo "No files to copy from public"; fi
-        - if [ -f "server.js" ]; then 
-            cp server.js .next/standalone/; 
-          else 
-            echo "Server.js not found, creating a basic server file";
-            echo 'const next = require("next");
-            const { createServer } = require("http");
-            const app = next({ dev: false, dir: __dirname });
-            const handle = app.getRequestHandler();
-            app.prepare().then(() => {
-              createServer((req, res) => {
-                handle(req, res);
-              }).listen(process.env.PORT || 3000, err => {
-                if (err) throw err;
-                console.log("> Ready on port " + (process.env.PORT || 3000));
-              });
-            });' > .next/standalone/server.js;
+        - cp server.js .next/standalone/ || echo "Server.js not found, creating fallback"
+        - |
+          if [ ! -f ".next/standalone/server.js" ]; then
+            cat > .next/standalone/server.js << 'EOL'
+const next = require("next");
+const { createServer } = require("http");
+const app = next({ dev: false, dir: __dirname });
+const handle = app.getRequestHandler();
+app.prepare().then(() => {
+  createServer((req, res) => {
+    handle(req, res);
+  }).listen(process.env.PORT || 3000, err => {
+    if (err) throw err;
+    console.log("> Ready on port " + (process.env.PORT || 3000));
+  });
+});
+EOL
           fi
         - ls -la .next/standalone
   artifacts:
