@@ -1,0 +1,168 @@
+2025-05-16T16:13:34.923Z [INFO]: # Cloning repository: git@github.com:nelsonfoster-216/cleveland-tech.git
+2025-05-16T16:13:35.613Z [INFO]: 
+2025-05-16T16:13:35.613Z [INFO]: Cloning into 'cleveland-tech'...
+2025-05-16T16:13:35.614Z [INFO]: # Switching to commit: 18a39d1a37d588c8669ef152146ce3ed0c30f0bf
+2025-05-16T16:13:35.629Z [INFO]: Note: switching to '18a39d1a37d588c8669ef152146ce3ed0c30f0bf'.
+                                 You are in 'detached HEAD' state. You can look around, make experimental
+                                 changes and commit them, and you can discard any commits you make in this
+                                 state without impacting any branches by switching back to a branch.
+                                 If you want to create a new branch to retain commits you create, you may
+                                 do so (now or later) by using -c with the switch command. Example:
+                                 git switch -c <new-branch-name>
+                                 Or undo this operation with:
+                                 git switch -
+                                 Turn off this advice by setting config variable advice.detachedHead to false
+                                 HEAD is now at 18a39d1 deployment fixes
+2025-05-16T16:13:35.672Z [INFO]: Successfully cleaned up Git credentials
+2025-05-16T16:13:35.672Z [INFO]: # Checking for Git submodules at: /codebuild/output/src2842027054/src/cleveland-tech/.gitmodules
+2025-05-16T16:13:35.677Z [INFO]: # Retrieving environment cache...
+2025-05-16T16:13:35.710Z [WARNING]: ! Unable to write cache: {"code":"ERR_BAD_REQUEST","message":"Request failed with status code 404"})}
+2025-05-16T16:13:35.710Z [INFO]: ---- Setting Up SSM Secrets ----
+2025-05-16T16:13:35.710Z [INFO]: SSM params {"Path":"/amplify/d2vk6cq3oqhf11/master/","WithDecryption":true}
+2025-05-16T16:13:35.755Z [WARNING]: !Failed to set up process.env.secrets
+2025-05-16T16:13:36.672Z [INFO]: # No package override configuration found.
+2025-05-16T16:13:36.676Z [INFO]: # Retrieving cache...
+2025-05-16T16:13:42.831Z [INFO]: # Extracting cache...
+2025-05-16T16:13:47.478Z [INFO]: # Extraction completed
+2025-05-16T16:13:47.586Z [INFO]: # Retrieved cache
+2025-05-16T16:13:52.355Z [INFO]: ## Starting Backend Build
+                                 ## Checking for associated backend environment...
+                                 ## No backend environment association found, continuing...
+                                 ## Completed Backend Build
+2025-05-16T16:13:52.359Z [INFO]: {"backendDuration": 0}
+                                 ## Starting Frontend Build
+                                 # Starting phase: preBuild
+                                 # Executing command: cd cleveland-tech-dashboard
+2025-05-16T16:13:52.443Z [INFO]: # Executing command: npm ci
+2025-05-16T16:14:15.765Z [INFO]: added 472 packages, and audited 473 packages in 19s
+2025-05-16T16:14:15.770Z [INFO]: 142 packages are looking for funding
+                                 run `npm fund` for details
+                                 found 0 vulnerabilities
+2025-05-16T16:14:15.781Z [INFO]: # Executing command: npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
+2025-05-16T16:14:18.871Z [INFO]: added 11 packages, changed 1 package, and audited 484 packages in 3s
+2025-05-16T16:14:18.877Z [INFO]: 146 packages are looking for funding
+                                 run `npm fund` for details
+                                 found 0 vulnerabilities
+2025-05-16T16:14:18.885Z [INFO]: # Completed phase: preBuild
+                                 # Starting phase: build
+                                 # Executing command: cd cleveland-tech-dashboard
+2025-05-16T16:14:18.892Z [INFO]: # Executing command: npm run build -- --no-lint
+2025-05-16T16:14:18.996Z [INFO]: > cleveland-tech-dashboard@0.1.0 build
+                                 > next build --no-lint
+2025-05-16T16:14:19.503Z [WARNING]: ⚠ Linting is disabled.
+2025-05-16T16:14:19.591Z [INFO]: ⚠ No build cache found. Please configure build caching for faster rebuilds. Read more: https://nextjs.org/docs/messages/no-cache
+2025-05-16T16:14:19.658Z [INFO]: Attention: Next.js now collects completely anonymous telemetry regarding usage.
+                                 This information is used to shape Next.js' roadmap and prioritize features.
+                                 You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+                                 https://nextjs.org/telemetry
+2025-05-16T16:14:19.659Z [INFO]: 
+2025-05-16T16:14:19.708Z [INFO]: ▲ Next.js 15.3.2
+2025-05-16T16:14:19.708Z [INFO]: 
+2025-05-16T16:14:19.773Z [INFO]: Creating an optimized production build ...
+2025-05-16T16:14:32.167Z [WARNING]: Failed to compile.
+                                    ./node_modules/leaflet/dist/leaflet.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./node_modules/leaflet/dist/leaflet.css
+                                    Error: It looks like you're trying to use `tailwindcss` directly as a PostCSS plugin. The PostCSS plugin has moved to a separate package, so to continue using Tailwind CSS with PostCSS you'll need to install `@tailwindcss/postcss` and update your PostCSS configuration.
+                                    at We (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/tailwindcss/dist/lib.js:35:2121)
+                                    at LazyResult.runOnRoot (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/node_modules/postcss/lib/lazy-result.js:329:16)
+                                    at LazyResult.runAsync (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/node_modules/postcss/lib/lazy-result.js:258:26)
+                                    at LazyResult.async (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/node_modules/postcss/lib/lazy-result.js:160:30)
+                                    at LazyResult.then (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/node_modules/postcss/lib/lazy-result.js:404:17)
+                                    Import trace for requested module:
+                                    ./node_modules/leaflet/dist/leaflet.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./node_modules/leaflet/dist/leaflet.css
+                                    ./node_modules/leaflet/dist/leaflet.css
+                                    ./src/app/dashboard/components/MapComponents.tsx
+                                    ./src/app/dashboard/components/ClevelandTechMap.tsx
+                                    ./src/app/globals.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./src/app/globals.css
+                                    Error: It looks like you're trying to use `tailwindcss` directly as a PostCSS plugin. The PostCSS plugin has moved to a separate package, so to continue using Tailwind CSS with PostCSS you'll need to install `@tailwindcss/postcss` and update your PostCSS configuration.
+                                    at We (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/tailwindcss/dist/lib.js:35:2121)
+                                    at LazyResult.runOnRoot (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/node_modules/postcss/lib/lazy-result.js:329:16)
+                                    at LazyResult.runAsync (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/node_modules/postcss/lib/lazy-result.js:258:26)
+                                    at LazyResult.async (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/node_modules/postcss/lib/lazy-result.js:160:30)
+                                    at LazyResult.then (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/node_modules/postcss/lib/lazy-result.js:404:17)
+                                    Import trace for requested module:
+                                    ./src/app/globals.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./src/app/globals.css
+                                    ./src/app/globals.css
+                                    ./src/app/layout.tsx
+                                    ./node_modules/leaflet/dist/leaflet.css
+                                    Error: It looks like you're trying to use `tailwindcss` directly as a PostCSS plugin. The PostCSS plugin has moved to a separate package, so to continue using Tailwind CSS with PostCSS you'll need to install `@tailwindcss/postcss` and update your PostCSS configuration.
+                                    at We (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/tailwindcss/dist/lib.js:35:2121)
+                                    at LazyResult.runOnRoot (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/node_modules/postcss/lib/lazy-result.js:329:16)
+                                    at LazyResult.runAsync (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/node_modules/postcss/lib/lazy-result.js:258:26)
+                                    at LazyResult.async (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/node_modules/postcss/lib/lazy-result.js:160:30)
+                                    at LazyResult.then (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/node_modules/postcss/lib/lazy-result.js:404:17)
+                                    at tryRunOrWebpackError (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/dist/compiled/webpack/bundle5.js:29:316142)
+                                    at __webpack_require_module__ (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/dist/compiled/webpack/bundle5.js:29:131548)
+                                    at __nested_webpack_require_161494__ (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/dist/compiled/webpack/bundle5.js:29:130983)
+                                    at /codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/dist/compiled/webpack/bundle5.js:29:131840
+                                    at symbolIterator (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/dist/compiled/neo-async/async.js:1:14444)
+                                    at done (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/dist/compiled/neo-async/async.js:1:14824)
+                                    at Hook.eval [as callAsync] (eval at create (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/dist/compiled/webpack/bundle5.js:14:9224), <anonymous>:15:1)
+                                    at /codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/dist/compiled/webpack/bundle5.js:29:130703
+                                    at symbolIterator (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/dist/compiled/neo-async/async.js:1:14402)
+                                    at timesSync (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/dist/compiled/neo-async/async.js:1:5027)
+                                    -- inner error --
+                                    Error: It looks like you're trying to use `tailwindcss` directly as a PostCSS plugin. The PostCSS plugin has moved to a separate package, so to continue using Tailwind CSS with PostCSS you'll need to install `@tailwindcss/postcss` and update your PostCSS configuration.
+                                    at We (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/tailwindcss/dist/lib.js:35:2121)
+                                    at LazyResult.runOnRoot (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/node_modules/postcss/lib/lazy-result.js:329:16)
+                                    at LazyResult.runAsync (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/node_modules/postcss/lib/lazy-result.js:258:26)
+                                    at LazyResult.async (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/node_modules/postcss/lib/lazy-result.js:160:30)
+                                    at LazyResult.then (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/node_modules/postcss/lib/lazy-result.js:404:17)
+                                    at Object.<anonymous> (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/leaflet/dist/leaflet.css:1:7)
+                                    at /codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/dist/compiled/webpack/bundle5.js:29:962742
+                                    at Hook.eval [as call] (eval at create (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/dist/compiled/webpack/bundle5.js:14:9002), <anonymous>:7:1)
+                                    at /codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/dist/compiled/webpack/bundle5.js:29:131581
+                                    at tryRunOrWebpackError (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/dist/compiled/webpack/bundle5.js:29:316096)
+                                    at __webpack_require_module__ (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/dist/compiled/webpack/bundle5.js:29:131548)
+                                    at __nested_webpack_require_161494__ (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/dist/compiled/webpack/bundle5.js:29:130983)
+                                    at /codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/dist/compiled/webpack/bundle5.js:29:131840
+                                    at symbolIterator (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/dist/compiled/neo-async/async.js:1:14444)
+                                    at done (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/dist/compiled/neo-async/async.js:1:14824)
+                                    Generated code for /codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/leaflet/dist/leaflet.css
+                                    Import trace for requested module:
+                                    ./node_modules/leaflet/dist/leaflet.css
+                                    ./src/app/dashboard/components/MapComponents.tsx
+                                    ./src/app/dashboard/components/ClevelandTechMap.tsx
+                                    ./src/app/globals.css
+                                    Error: It looks like you're trying to use `tailwindcss` directly as a PostCSS plugin. The PostCSS plugin has moved to a separate package, so to continue using Tailwind CSS with PostCSS you'll need to install `@tailwindcss/postcss` and update your PostCSS configuration.
+                                    at We (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/tailwindcss/dist/lib.js:35:2121)
+                                    at LazyResult.runOnRoot (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/node_modules/postcss/lib/lazy-result.js:329:16)
+                                    at LazyResult.runAsync (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/node_modules/postcss/lib/lazy-result.js:258:26)
+                                    at LazyResult.async (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/node_modules/postcss/lib/lazy-result.js:160:30)
+                                    at LazyResult.then (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/node_modules/postcss/lib/lazy-result.js:404:17)
+                                    at tryRunOrWebpackError (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/dist/compiled/webpack/bundle5.js:29:316142)
+                                    at __webpack_require_module__ (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/dist/compiled/webpack/bundle5.js:29:131548)
+                                    at __nested_webpack_require_161494__ (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/dist/compiled/webpack/bundle5.js:29:130983)
+                                    at /codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/dist/compiled/webpack/bundle5.js:29:131840
+                                    at symbolIterator (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/dist/compiled/neo-async/async.js:1:14444)
+                                    at done (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/dist/compiled/neo-async/async.js:1:14824)
+                                    at Hook.eval [as callAsync] (eval at create (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/dist/compiled/webpack/bundle5.js:14:9224), <anonymous>:15:1)
+                                    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/dist/compiled/webpack/bundle5.js:14:6378)
+                                    at /codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/dist/compiled/webpack/bundle5.js:29:130703
+                                    at symbolIterator (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/dist/compiled/neo-async/async.js:1:14402)
+                                    -- inner error --
+                                    Error: It looks like you're trying to use `tailwindcss` directly as a PostCSS plugin. The PostCSS plugin has moved to a separate package, so to continue using Tailwind CSS with PostCSS you'll need to install `@tailwindcss/postcss` and update your PostCSS configuration.
+                                    at We (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/tailwindcss/dist/lib.js:35:2121)
+                                    at LazyResult.runOnRoot (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/node_modules/postcss/lib/lazy-result.js:329:16)
+                                    at LazyResult.runAsync (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/node_modules/postcss/lib/lazy-result.js:258:26)
+                                    at LazyResult.async (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/node_modules/postcss/lib/lazy-result.js:160:30)
+                                    at LazyResult.then (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/node_modules/postcss/lib/lazy-result.js:404:17)
+                                    at Object.<anonymous> (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/src/app/globals.css:1:7)
+                                    at /codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/dist/compiled/webpack/bundle5.js:29:962742
+                                    at Hook.eval [as call] (eval at create (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/dist/compiled/webpack/bundle5.js:14:9002), <anonymous>:7:1)
+                                    at Hook.CALL_DELEGATE [as _call] (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/dist/compiled/webpack/bundle5.js:14:6272)
+                                    at /codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/dist/compiled/webpack/bundle5.js:29:131581
+                                    at tryRunOrWebpackError (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/dist/compiled/webpack/bundle5.js:29:316096)
+                                    at __webpack_require_module__ (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/dist/compiled/webpack/bundle5.js:29:131548)
+                                    at __nested_webpack_require_161494__ (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/dist/compiled/webpack/bundle5.js:29:130983)
+                                    at /codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/dist/compiled/webpack/bundle5.js:29:131840
+                                    at symbolIterator (/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/dist/compiled/neo-async/async.js:1:14444)
+                                    Generated code for /codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!/codebuild/output/src2842027054/src/cleveland-tech/cleveland-tech-dashboard/src/app/globals.css
+                                    Import trace for requested module:
+                                    ./src/app/globals.css
+                                    ./src/app/layout.tsx
+2025-05-16T16:14:32.180Z [WARNING]: > Build failed because of webpack errors
+2025-05-16T16:14:32.244Z [ERROR]: !!! Build failed
+2025-05-16T16:14:32.244Z [ERROR]: !!! Error: Command failed with exit code 1
+2025-05-16T16:14:32.244Z [INFO]: # Starting environment caching...
+2025-05-16T16:14:32.244Z [INFO]: # Environment caching completed
+
