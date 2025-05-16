@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  output: 'standalone',
   images: {
     domains: [
       'raw.githubusercontent.com', 
@@ -21,8 +20,7 @@ const nextConfig = {
       '3dprint.com',
       'www.hoffleigh.com'
     ],
-    unoptimized: true,
-  }
+  },
 };
 
 module.exports = nextConfig; 
