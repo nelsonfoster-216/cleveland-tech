@@ -13,7 +13,7 @@ frontend:
         - echo "Build completed, preparing standalone output..."
         - mkdir -p .next/standalone/.next
         - cp -R .next/static .next/standalone/.next/
-        - cp -R public .next/standalone/
+        - if [ -d "public" ]; then cp -R public .next/standalone/; fi
   artifacts:
     baseDirectory: .next/standalone
     files:
