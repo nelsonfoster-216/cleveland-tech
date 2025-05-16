@@ -8,13 +8,13 @@ frontend:
       commands:
         - echo "Listing directory structure for debugging:"
         - ls -la
+        - echo "Current working directory is $(pwd)"
         - echo "Starting build process..."
         - NODE_ENV=production npm run build
         - echo "Build completed, preparing standalone output..."
         - mkdir -p .next/standalone/.next
         - cp -R .next/static .next/standalone/.next/
         - if [ -d "public" ]; then cp -R public .next/standalone/; fi
-        - if [ -d "cleveland-tech-dashboard/public" ]; then cp -R cleveland-tech-dashboard/public .next/standalone/; fi
         - echo "Final standalone directory structure:"
         - ls -la .next/standalone/
   artifacts:
