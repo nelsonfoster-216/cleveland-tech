@@ -1,8 +1,8 @@
-2025-05-16T18:04:47.409Z [INFO]: # Cloning repository: git@github.com:nelsonfoster-216/cleveland-tech.git
-2025-05-16T18:04:48.003Z [INFO]: 
-2025-05-16T18:04:48.004Z [INFO]: Cloning into 'cleveland-tech'...
-2025-05-16T18:04:48.004Z [INFO]: # Switching to commit: 0239785553008a2715f7ead59ac30c2e23a35b33
-2025-05-16T18:04:48.019Z [INFO]: Note: switching to '0239785553008a2715f7ead59ac30c2e23a35b33'.
+2025-05-16T18:12:00.282Z [INFO]: # Cloning repository: git@github.com:nelsonfoster-216/cleveland-tech.git
+2025-05-16T18:12:00.943Z [INFO]: 
+2025-05-16T18:12:00.944Z [INFO]: Cloning into 'cleveland-tech'...
+2025-05-16T18:12:00.944Z [INFO]: # Switching to commit: 78ce5e7b53a327bef73ec078ff6c60c10c289e2c
+2025-05-16T18:12:00.961Z [INFO]: Note: switching to '78ce5e7b53a327bef73ec078ff6c60c10c289e2c'.
                                  You are in 'detached HEAD' state. You can look around, make experimental
                                  changes and commit them, and you can discard any commits you make in this
                                  state without impacting any branches by switching back to a branch.
@@ -12,64 +12,64 @@
                                  Or undo this operation with:
                                  git switch -
                                  Turn off this advice by setting config variable advice.detachedHead to false
-                                 HEAD is now at 0239785 deployment path fixes
-2025-05-16T18:04:48.069Z [INFO]: Successfully cleaned up Git credentials
-2025-05-16T18:04:48.069Z [INFO]: # Checking for Git submodules at: /codebuild/output/src2064812806/src/cleveland-tech/.gitmodules
-2025-05-16T18:04:48.073Z [INFO]: # Retrieving environment cache...
-2025-05-16T18:04:48.126Z [INFO]: # Retrieved environment cache
-2025-05-16T18:04:48.126Z [INFO]: ---- Setting Up SSM Secrets ----
-2025-05-16T18:04:48.126Z [INFO]: SSM params {"Path":"/amplify/d2vk6cq3oqhf11/master/","WithDecryption":true}
-2025-05-16T18:04:48.171Z [WARNING]: !Failed to set up process.env.secrets
-2025-05-16T18:04:48.963Z [INFO]: # No package override configuration found.
-2025-05-16T18:04:48.966Z [INFO]: # Retrieving cache...
-2025-05-16T18:04:55.004Z [INFO]: # Extracting cache...
-2025-05-16T18:04:59.178Z [INFO]: # Extraction completed
-2025-05-16T18:04:59.269Z [INFO]: # Retrieved cache
-2025-05-16T18:05:03.552Z [INFO]: ## Starting Backend Build
+                                 HEAD is now at 78ce5e7 amplify updates (Again)
+2025-05-16T18:12:01.000Z [INFO]: Successfully cleaned up Git credentials
+2025-05-16T18:12:01.001Z [INFO]: # Checking for Git submodules at: /codebuild/output/src1022675590/src/cleveland-tech/.gitmodules
+2025-05-16T18:12:01.006Z [INFO]: # Retrieving environment cache...
+2025-05-16T18:12:01.129Z [INFO]: # Retrieved environment cache
+2025-05-16T18:12:01.129Z [INFO]: ---- Setting Up SSM Secrets ----
+2025-05-16T18:12:01.129Z [INFO]: SSM params {"Path":"/amplify/d2vk6cq3oqhf11/master/","WithDecryption":true}
+2025-05-16T18:12:01.180Z [WARNING]: !Failed to set up process.env.secrets
+2025-05-16T18:12:02.120Z [INFO]: # No package override configuration found.
+2025-05-16T18:12:02.123Z [INFO]: # Retrieving cache...
+2025-05-16T18:12:08.859Z [INFO]: # Extracting cache...
+2025-05-16T18:12:13.396Z [INFO]: # Extraction completed
+2025-05-16T18:12:13.532Z [INFO]: # Retrieved cache
+2025-05-16T18:12:17.993Z [INFO]: ## Starting Backend Build
                                  ## Checking for associated backend environment...
                                  ## No backend environment association found, continuing...
                                  ## Completed Backend Build
-2025-05-16T18:05:03.556Z [INFO]: {"backendDuration": 0}
+2025-05-16T18:12:17.997Z [INFO]: {"backendDuration": 0}
                                  ## Starting Frontend Build
                                  # Starting phase: preBuild
                                  # Executing command: cd cleveland-tech-dashboard
-2025-05-16T18:05:03.653Z [INFO]: # Executing command: npm ci
-2025-05-16T18:05:25.234Z [INFO]: added 472 packages, and audited 473 packages in 18s
-                                 142 packages are looking for funding
-                                 run `npm fund` for details
-2025-05-16T18:05:25.238Z [INFO]: found 0 vulnerabilities
-2025-05-16T18:05:25.249Z [INFO]: # Executing command: npm install -D tailwindcss@latest @tailwindcss/postcss@latest postcss@latest autoprefixer@latest
-2025-05-16T18:05:29.511Z [INFO]: added 9 packages, changed 9 packages, and audited 480 packages in 4s
-2025-05-16T18:05:29.516Z [INFO]: 145 packages are looking for funding
+2025-05-16T18:12:18.065Z [INFO]: # Executing command: npm ci
+2025-05-16T18:12:41.173Z [INFO]: added 472 packages, and audited 473 packages in 19s
+2025-05-16T18:12:41.178Z [INFO]: 142 packages are looking for funding
                                  run `npm fund` for details
                                  found 0 vulnerabilities
-2025-05-16T18:05:29.523Z [INFO]: # Completed phase: preBuild
+2025-05-16T18:12:41.195Z [INFO]: # Executing command: npm install -D tailwindcss@latest @tailwindcss/postcss@latest postcss@latest autoprefixer@latest
+2025-05-16T18:12:45.515Z [INFO]: added 9 packages, changed 9 packages, and audited 480 packages in 4s
+2025-05-16T18:12:45.519Z [INFO]: 145 packages are looking for funding
+                                 run `npm fund` for details
+                                 found 0 vulnerabilities
+2025-05-16T18:12:45.527Z [INFO]: # Completed phase: preBuild
                                  # Starting phase: build
                                  # Executing command: cd cleveland-tech-dashboard
-2025-05-16T18:05:29.528Z [INFO]: # Executing command: NEXT_PUBLIC_BASE_URL=https://master.d2vk6cq3oqhf11.amplifyapp.com NODE_ENV=production npm run build -- --no-lint
-2025-05-16T18:05:29.620Z [INFO]: > cleveland-tech-dashboard@0.1.0 build
+2025-05-16T18:12:45.532Z [INFO]: # Executing command: NEXT_PUBLIC_BASE_URL=https://master.d2vk6cq3oqhf11.amplifyapp.com NODE_ENV=production npm run build -- --no-lint
+2025-05-16T18:12:45.640Z [INFO]: > cleveland-tech-dashboard@0.1.0 build
                                  > next build --no-lint
-2025-05-16T18:05:30.121Z [WARNING]: ⚠ Linting is disabled.
-2025-05-16T18:05:30.200Z [INFO]: ⚠ No build cache found. Please configure build caching for faster rebuilds. Read more: https://nextjs.org/docs/messages/no-cache
-2025-05-16T18:05:30.265Z [INFO]: Attention: Next.js now collects completely anonymous telemetry regarding usage.
+2025-05-16T18:12:46.210Z [WARNING]: ⚠ Linting is disabled.
+2025-05-16T18:12:46.296Z [INFO]: ⚠ No build cache found. Please configure build caching for faster rebuilds. Read more: https://nextjs.org/docs/messages/no-cache
+2025-05-16T18:12:46.370Z [INFO]: Attention: Next.js now collects completely anonymous telemetry regarding usage.
                                  This information is used to shape Next.js' roadmap and prioritize features.
                                  You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
-                                 https://nextjs.org/telemetry
-2025-05-16T18:05:30.309Z [INFO]: ▲ Next.js 15.3.2
-2025-05-16T18:05:30.309Z [INFO]: 
-2025-05-16T18:05:30.371Z [INFO]: Creating an optimized production build ...
-2025-05-16T18:05:41.746Z [INFO]: ✓ Compiled successfully in 8.0s
-2025-05-16T18:05:41.751Z [INFO]: Checking validity of types ...
-2025-05-16T18:05:44.526Z [INFO]: Collecting page data ...
-2025-05-16T18:05:45.835Z [INFO]: Generating static pages (0/7) ...
-2025-05-16T18:05:46.393Z [INFO]: Generating static pages (1/7)
-                                 Generating static pages (3/7)
+2025-05-16T18:12:46.370Z [INFO]: https://nextjs.org/telemetry
+2025-05-16T18:12:46.423Z [INFO]: ▲ Next.js 15.3.2
+2025-05-16T18:12:46.424Z [INFO]: 
+2025-05-16T18:12:46.496Z [INFO]: Creating an optimized production build ...
+2025-05-16T18:12:59.282Z [INFO]: ✓ Compiled successfully in 10.0s
+2025-05-16T18:12:59.292Z [INFO]: Checking validity of types ...
+2025-05-16T18:13:02.455Z [INFO]: Collecting page data ...
+2025-05-16T18:13:03.863Z [INFO]: Generating static pages (0/7) ...
+2025-05-16T18:13:04.407Z [INFO]: Generating static pages (1/7)
+2025-05-16T18:13:04.408Z [INFO]: Generating static pages (3/7)
                                  Generating static pages (5/7)
-2025-05-16T18:05:46.393Z [INFO]: ✓ Generating static pages (7/7)
-2025-05-16T18:05:46.721Z [INFO]: Finalizing page optimization ...
-2025-05-16T18:05:46.721Z [INFO]: Collecting build traces ...
-2025-05-16T18:05:54.313Z [INFO]: 
-2025-05-16T18:05:54.316Z [INFO]: Route (app)                                 Size  First Load JS
+                                 ✓ Generating static pages (7/7)
+2025-05-16T18:13:04.768Z [INFO]: Finalizing page optimization ...
+                                 Collecting build traces ...
+2025-05-16T18:13:13.649Z [INFO]: 
+2025-05-16T18:13:13.653Z [INFO]: Route (app)                                 Size  First Load JS
                                  ┌ ○ /                                      175 B         105 kB
                                  ├ ○ /_not-found                            977 B         103 kB
                                  ├ ƒ /dashboard                           88.5 kB         190 kB
@@ -84,13 +84,13 @@
                                  └ other shared chunks (total)          2.51 kB
                                  ○  (Static)   prerendered as static content
                                  ƒ  (Dynamic)  server-rendered on demand
-2025-05-16T18:05:54.337Z [INFO]: # Executing command: mkdir -p ./cleveland-tech-dashboard/.next/standalone/.next
-2025-05-16T18:05:54.338Z [INFO]: # Executing command: cp -R ./cleveland-tech-dashboard/public ./cleveland-tech-dashboard/.next/standalone/
-2025-05-16T18:05:54.340Z [WARNING]: cp: cannot stat './cleveland-tech-dashboard/public': No such file or directory
-2025-05-16T18:05:54.391Z [ERROR]: !!! Build failed
-2025-05-16T18:05:54.391Z [ERROR]: !!! Error: Command failed with exit code 1
-2025-05-16T18:05:54.391Z [INFO]: # Starting environment caching...
-2025-05-16T18:05:54.391Z [INFO]: # Uploading environment cache artifact...
-2025-05-16T18:05:54.461Z [INFO]: # Uploaded environment cache artifact
-2025-05-16T18:05:54.461Z [INFO]: # Environment caching completed
+2025-05-16T18:13:13.669Z [INFO]: # Executing command: mkdir -p ./cleveland-tech-dashboard/.next/standalone/.next
+2025-05-16T18:13:13.671Z [INFO]: # Executing command: cp -R ./cleveland-tech-dashboard/public ./cleveland-tech-dashboard/.next/standalone/
+2025-05-16T18:13:13.672Z [WARNING]: cp: cannot stat './cleveland-tech-dashboard/public': No such file or directory
+2025-05-16T18:13:13.740Z [ERROR]: !!! Build failed
+2025-05-16T18:13:13.740Z [ERROR]: !!! Error: Command failed with exit code 1
+2025-05-16T18:13:13.740Z [INFO]: # Starting environment caching...
+2025-05-16T18:13:13.740Z [INFO]: # Uploading environment cache artifact...
+2025-05-16T18:13:13.823Z [INFO]: # Uploaded environment cache artifact
+2025-05-16T18:13:13.823Z [INFO]: # Environment caching completed
 
