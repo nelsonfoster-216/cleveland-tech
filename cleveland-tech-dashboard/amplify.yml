@@ -14,7 +14,8 @@ frontend:
         - echo "Build completed, preparing standalone output..."
         - mkdir -p .next/standalone/.next
         - cp -R .next/static .next/standalone/.next/
-        - if [ -d "public" ]; then cp -R public .next/standalone/; fi
+        - cp -R public .next/standalone/ || echo "No public directory found, skipping..."
+        - cp server.js .next/standalone/
         - echo "Final standalone directory structure:"
         - ls -la .next/standalone/
   artifacts:
@@ -23,5 +24,4 @@ frontend:
       - '**/*'
   cache:
     paths:
-      - node_modules/**/*
-      - .next/cache/**/* 
+      - node_modules/**/* 
