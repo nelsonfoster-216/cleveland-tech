@@ -9,9 +9,11 @@ frontend:
     build:
       commands:
         - cd cleveland-tech-dashboard
-        - npm run build -- --no-lint
+        - NEXT_PUBLIC_BASE_URL=https://master.d2vk6cq3oqhf11.amplifyapp.com NODE_ENV=production npm run build -- --no-lint
+        - cp -R ./cleveland-tech-dashboard/.next/static ./cleveland-tech-dashboard/.next/standalone/.next/
+        - cp -R ./cleveland-tech-dashboard/public ./cleveland-tech-dashboard/.next/standalone/
   artifacts:
-    baseDirectory: cleveland-tech-dashboard/.next
+    baseDirectory: cleveland-tech-dashboard/.next/standalone
     files:
       - '**/*'
   cache:
