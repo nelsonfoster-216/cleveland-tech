@@ -8,10 +8,12 @@ frontend:
       commands:
         - echo "Current working directory is $(pwd)"
         - ls -la
+        - mkdir -p public
         - npm run build
         - mkdir -p .next/standalone/.next
         - cp -R .next/static .next/standalone/.next/
         - mkdir -p .next/standalone/public
+        - if [ -d "public" ]; then cp -R public/* .next/standalone/public/ || echo "No files to copy from public"; fi
         - if [ -f "server.js" ]; then 
             cp server.js .next/standalone/; 
           else 
@@ -23,16 +25,18 @@ frontend:
             app.prepare().then(() => {
               createServer((req, res) => {
                 handle(req, res);
-              }).listen(3000, err => {
+              }).listen(process.env.PORT || 3000, err => {
                 if (err) throw err;
-                console.log("> Ready on :3000");
+                console.log("> Ready on port " + (process.env.PORT || 3000));
               });
             });' > .next/standalone/server.js;
           fi
+        - ls -la .next/standalone
   artifacts:
     baseDirectory: .next/standalone
     files:
       - '**/*'
   cache:
     paths:
-      - node_modules/**/* 
+      - node_modules/**/*
+      - .next/cache/**/* 
