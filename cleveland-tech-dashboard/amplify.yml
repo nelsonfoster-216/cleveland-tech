@@ -7,22 +7,28 @@ frontend:
     build:
       commands:
         - echo "Current working directory is $(pwd)"
-        - echo "Directory contents:"
         - ls -la
-        - echo "Starting build process..."
-        - NODE_ENV=production npm run build
-        - echo "Build completed, preparing standalone output..."
+        - npm run build
         - mkdir -p .next/standalone/.next
         - cp -R .next/static .next/standalone/.next/
         - mkdir -p .next/standalone/public
-        - echo "Looking for PDF files:"
-        - find . -name "*.pdf" -type f
-        - find .. -name "*.pdf" -type f | grep -v node_modules
-        - if [ -d "public" ]; then cp -R public/* .next/standalone/public/ || true; fi
-        - cp server.js .next/standalone/ || echo "No server.js found - creating minimal one"
-        - if [ ! -f ".next/standalone/server.js" ]; then echo 'const { createServer } = require("http"); const { parse } = require("url"); const next = require("next"); const dev = false; const hostname = process.env.HOSTNAME || "localhost"; const port = process.env.PORT || 3000; const app = next({ dev, dir: __dirname }); const handle = app.getRequestHandler(); app.prepare().then(() => { createServer(async (req, res) => { try { const parsedUrl = parse(req.url, true); await handle(req, res, parsedUrl); } catch (err) { console.error("Error occurred handling", req.url, err); res.statusCode = 500; res.end("Internal Server Error"); } }).listen(port, (err) => { if (err) throw err; console.log(`> Ready on http://${hostname}:${port}`); }); });' > .next/standalone/server.js; fi
-        - echo "Final standalone directory structure:"
-        - ls -la .next/standalone/
+        - if [ -f "server.js" ]; then 
+            cp server.js .next/standalone/; 
+          else 
+            echo "Server.js not found, creating a basic server file";
+            echo 'const next = require("next");
+            const { createServer } = require("http");
+            const app = next({ dev: false, dir: __dirname });
+            const handle = app.getRequestHandler();
+            app.prepare().then(() => {
+              createServer((req, res) => {
+                handle(req, res);
+              }).listen(3000, err => {
+                if (err) throw err;
+                console.log("> Ready on :3000");
+              });
+            });' > .next/standalone/server.js;
+          fi
   artifacts:
     baseDirectory: .next/standalone
     files:
