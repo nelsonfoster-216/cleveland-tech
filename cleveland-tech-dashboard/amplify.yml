@@ -6,16 +6,21 @@ frontend:
         - npm ci
     build:
       commands:
-        - echo "Listing directory structure for debugging:"
-        - ls -la
         - echo "Current working directory is $(pwd)"
+        - echo "Directory contents:"
+        - ls -la
         - echo "Starting build process..."
         - NODE_ENV=production npm run build
         - echo "Build completed, preparing standalone output..."
         - mkdir -p .next/standalone/.next
         - cp -R .next/static .next/standalone/.next/
-        - cp -R public .next/standalone/ || echo "No public directory found, skipping..."
-        - cp server.js .next/standalone/
+        - mkdir -p .next/standalone/public
+        - echo "Looking for PDF files:"
+        - find . -name "*.pdf" -type f
+        - find .. -name "*.pdf" -type f | grep -v node_modules
+        - if [ -d "public" ]; then cp -R public/* .next/standalone/public/ || true; fi
+        - cp server.js .next/standalone/ || echo "No server.js found - creating minimal one"
+        - if [ ! -f ".next/standalone/server.js" ]; then echo 'const { createServer } = require("http"); const { parse } = require("url"); const next = require("next"); const dev = false; const hostname = process.env.HOSTNAME || "localhost"; const port = process.env.PORT || 3000; const app = next({ dev, dir: __dirname }); const handle = app.getRequestHandler(); app.prepare().then(() => { createServer(async (req, res) => { try { const parsedUrl = parse(req.url, true); await handle(req, res, parsedUrl); } catch (err) { console.error("Error occurred handling", req.url, err); res.statusCode = 500; res.end("Internal Server Error"); } }).listen(port, (err) => { if (err) throw err; console.log(`> Ready on http://${hostname}:${port}`); }); });' > .next/standalone/server.js; fi
         - echo "Final standalone directory structure:"
         - ls -la .next/standalone/
   artifacts:
