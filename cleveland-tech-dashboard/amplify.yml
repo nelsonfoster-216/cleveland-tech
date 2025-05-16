@@ -1,0 +1,24 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm ci
+    build:
+      commands:
+        - echo "Listing directory structure for debugging:"
+        - ls -la
+        - echo "Starting build process..."
+        - NODE_ENV=production npm run build
+        - echo "Build completed, preparing standalone output..."
+        - mkdir -p .next/standalone/.next
+        - cp -R .next/static .next/standalone/.next/
+        - cp -R public .next/standalone/
+  artifacts:
+    baseDirectory: .next/standalone
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
+      - .next/cache/**/* 

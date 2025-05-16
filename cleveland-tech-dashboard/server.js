@@ -1,12 +1,14 @@
+const path = require('path');
 const { createServer } = require('http');
 const { parse } = require('url');
 const next = require('next');
 
 const dev = process.env.NODE_ENV !== 'production';
-const hostname = 'localhost';
+const hostname = process.env.HOSTNAME || 'localhost';
 const port = process.env.PORT || 3000;
 
-const app = next({ dev, hostname, port });
+// Create the Next.js app
+const app = next({ dev, dir: __dirname });
 const handle = app.getRequestHandler();
 
 app.prepare().then(() => {
